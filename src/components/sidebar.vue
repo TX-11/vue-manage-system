@@ -20,18 +20,13 @@
 							<span>{{ item.title }}</span>
 						</template>
 						<template v-for="subItem in item.subs">
-							<el-sub-menu
-								v-if="subItem.subs"
-								:index="subItem.index"
-								:key="subItem.index"
-								v-permiss="item.permiss"
-							>
+							<el-sub-menu v-if="subItem.subs" :index="subItem.index" :key="subItem.index" v-permiss="item.permiss">
 								<template #title>{{ subItem.title }}</template>
 								<el-menu-item v-for="(threeItem, i) in subItem.subs" :key="i" :index="threeItem.index">
 									{{ threeItem.title }}
 								</el-menu-item>
 							</el-sub-menu>
-							<el-menu-item v-else :index="subItem.index" v-permiss="item.permiss">
+							<el-menu-item v-else :index="subItem.index" :key="subItem.index" v-permiss="item.permiss">
 								{{ subItem.title }}
 							</el-menu-item>
 						</template>
@@ -60,19 +55,19 @@ const items = [
 		icon: 'Odometer',
 		index: '/dashboard',
 		title: '系统首页',
-		permiss: '1'
+		permiss: '1',
 	},
 	{
 		icon: 'Calendar',
 		index: '/table',
 		title: '基础表格',
-		permiss: '2'
+		permiss: '2',
 	},
 	{
 		icon: 'DocumentCopy',
 		index: '/tabs',
 		title: 'tab选项卡',
-		permiss: '3'
+		permiss: '3',
 	},
 	{
 		icon: 'Edit',
@@ -83,12 +78,12 @@ const items = [
 			{
 				index: '/form',
 				title: '基本表单',
-				permiss: '5'
+				permiss: '5',
 			},
 			{
 				index: '/upload',
 				title: '文件上传',
-				permiss: '6'
+				permiss: '6',
 			},
 			{
 				index: '4',
@@ -98,34 +93,34 @@ const items = [
 					{
 						index: '/editor',
 						title: '富文本编辑器',
-						permiss: '8'
+						permiss: '8',
 					},
 					{
 						index: '/markdown',
 						title: 'markdown编辑器',
-						permiss: '9'
-					}
-				]
-			}
-		]
+						permiss: '9',
+					},
+				],
+			},
+		],
 	},
 	{
 		icon: 'Setting',
 		index: '/icon',
 		title: '自定义图标',
-		permiss: '10'
+		permiss: '10',
 	},
 	{
 		icon: 'PieChart',
 		index: '/charts',
 		title: 'schart图表',
-		permiss: '11'
+		permiss: '11',
 	},
 	{
 		icon: 'Warning',
 		index: '/permission',
 		title: '权限管理',
-		permiss: '13'
+		permiss: '13',
 	},
 ];
 

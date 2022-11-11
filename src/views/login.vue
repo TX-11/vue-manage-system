@@ -11,12 +11,7 @@
 					</el-input>
 				</el-form-item>
 				<el-form-item prop="password">
-					<el-input
-						type="password"
-						placeholder="password"
-						v-model="param.password"
-						@keyup.enter="submitForm(login)"
-					>
+					<el-input type="password" placeholder="password" v-model="param.password" @keyup.enter="submitForm(login)">
 						<template #prepend>
 							<el-button :icon="Lock"></el-button>
 						</template>
@@ -48,7 +43,7 @@ interface LoginInfo {
 const router = useRouter();
 const param = reactive<LoginInfo>({
 	username: 'admin',
-	password: '123123'
+	password: '123123',
 });
 
 const rules: FormRules = {
@@ -56,10 +51,10 @@ const rules: FormRules = {
 		{
 			required: true,
 			message: '请输入用户名',
-			trigger: 'blur'
-		}
+			trigger: 'blur',
+		},
 	],
-	password: [{ required: true, message: '请输入密码', trigger: 'blur' }]
+	password: [{ required: true, message: '请输入密码', trigger: 'blur' }],
 };
 const permiss = usePermissStore();
 const login = ref<FormInstance>();

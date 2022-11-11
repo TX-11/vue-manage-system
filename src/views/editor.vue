@@ -16,7 +16,7 @@ import { ref, reactive, onMounted, onBeforeUnmount } from 'vue';
 const editor = ref(null);
 const content = reactive({
 	html: '',
-	text: ''
+	text: '',
 });
 let instance: any;
 onMounted(() => {

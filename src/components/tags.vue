@@ -1,12 +1,7 @@
 <template>
 	<div class="tags" v-if="tags.show">
 		<ul>
-			<li
-				class="tags-li"
-				v-for="(item, index) in tags.list"
-				:class="{ active: isActive(item.path) }"
-				:key="index"
-			>
+			<li class="tags-li" v-for="(item, index) in tags.list" :class="{ active: isActive(item.path) }" :key="index">
 				<router-link :to="item.path" class="tags-li-title">{{ item.title }}</router-link>
 				<el-icon @click="closeTags(index)"><Close /></el-icon>
 			</li>
@@ -55,7 +50,7 @@ const closeTags = (index: number) => {
 
 // 设置标签
 const setTags = (route: any) => {
-	const isExist = tags.list.some(item => {
+	const isExist = tags.list.some((item) => {
 		return item.path === route.fullPath;
 	});
 	if (!isExist) {
@@ -63,12 +58,12 @@ const setTags = (route: any) => {
 		tags.setTagsItem({
 			name: route.name,
 			title: route.meta.title,
-			path: route.fullPath
+			path: route.fullPath,
 		});
 	}
 };
 setTags(route);
-onBeforeRouteUpdate(to => {
+onBeforeRouteUpdate((to) => {
 	setTags(to);
 });
 
@@ -79,7 +74,7 @@ const closeAll = () => {
 };
 // 关闭其他标签
 const closeOther = () => {
-	const curItem = tags.list.filter(item => {
+	const curItem = tags.list.filter((item) => {
 		return item.path === route.fullPath;
 	});
 	tags.closeTagsOther(curItem);

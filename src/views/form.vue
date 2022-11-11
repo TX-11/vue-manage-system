@@ -15,19 +15,13 @@
 				<el-form-item label="日期时间">
 					<el-col :span="11">
 						<el-form-item prop="date1">
-							<el-date-picker
-								type="date"
-								placeholder="选择日期"
-								v-model="form.date1"
-								style="width: 100%"
-							></el-date-picker>
+							<el-date-picker type="date" placeholder="选择日期" v-model="form.date1" style="width: 100%"></el-date-picker>
 						</el-form-item>
 					</el-col>
 					<el-col class="line" :span="2">-</el-col>
 					<el-col :span="11">
 						<el-form-item prop="date2">
-							<el-time-picker placeholder="选择时间" v-model="form.date2" style="width: 100%">
-							</el-time-picker>
+							<el-time-picker placeholder="选择时间" v-model="form.date2" style="width: 100%"> </el-time-picker>
 						</el-form-item>
 					</el-col>
 				</el-form-item>
@@ -79,13 +73,13 @@ const options = [
 				children: [
 					{
 						value: 'tianhe',
-						label: '天河区'
+						label: '天河区',
 					},
 					{
 						value: 'haizhu',
-						label: '海珠区'
-					}
-				]
+						label: '海珠区',
+					},
+				],
 			},
 			{
 				value: 'dongguan',
@@ -93,15 +87,15 @@ const options = [
 				children: [
 					{
 						value: 'changan',
-						label: '长安镇'
+						label: '长安镇',
 					},
 					{
 						value: 'humen',
-						label: '虎门镇'
-					}
-				]
-			}
-		]
+						label: '虎门镇',
+					},
+				],
+			},
+		],
 	},
 	{
 		value: 'hunan',
@@ -113,15 +107,15 @@ const options = [
 				children: [
 					{
 						value: 'yuelu',
-						label: '岳麓区'
-					}
-				]
-			}
-		]
-	}
+						label: '岳麓区',
+					},
+				],
+			},
+		],
+	},
 ];
 const rules: FormRules = {
-	name: [{ required: true, message: '请输入表单名称', trigger: 'blur' }]
+	name: [{ required: true, message: '请输入表单名称', trigger: 'blur' }],
 };
 const formRef = ref<FormInstance>();
 const form = reactive({
@@ -133,13 +127,13 @@ const form = reactive({
 	type: ['步步高'],
 	resource: '小天才',
 	desc: '',
-	options: []
+	options: [],
 });
 // 提交
 const onSubmit = (formEl: FormInstance | undefined) => {
 	// 表单校验
 	if (!formEl) return;
-	formEl.validate(valid => {
+	formEl.validate((valid) => {
 		if (valid) {
 			console.log(form);
 			ElMessage.success('提交成功！');

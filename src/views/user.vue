@@ -78,7 +78,7 @@ const name = localStorage.getItem('ms_username');
 const form = reactive({
 	old: '',
 	new: '',
-	desc: '不可能！我的代码怎么可能会有bug！'
+	desc: '不可能！我的代码怎么可能会有bug！',
 });
 const onSubmit = () => {};
 

@@ -16,12 +16,11 @@ import { useRouter } from 'vue-router';
 
 const router = useRouter();
 const goBack = () => {
-	
 	router.go(-1);
 };
 const goHome = () => {
-	router.replace('login')
-}
+	router.replace('login');
+};
 </script>
 
 <style scoped>

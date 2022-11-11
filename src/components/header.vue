@@ -1,3 +1,5 @@
+<!-- @format -->
+
 <template>
 	<div class="header">
 		<!-- 折叠按钮 -->
@@ -10,11 +12,7 @@
 			<div class="header-user-con">
 				<!-- 消息中心 -->
 				<div class="btn-bell" @click="router.push('/tabs')">
-					<el-tooltip
-						effect="dark"
-						:content="message ? `有${message}条未读消息` : `消息中心`"
-						placement="bottom"
-					>
+					<el-tooltip effect="dark" :content="message ? `有${message}条未读消息` : `消息中心`" placement="bottom">
 						<i class="el-icon-lx-notice"></i>
 					</el-tooltip>
 					<span class="btn-bell-badge" v-if="message"></span>

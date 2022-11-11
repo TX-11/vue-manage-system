@@ -27,8 +27,7 @@
 					</template>
 					Vue
 					<el-progress :percentage="71.3" color="#42b983"></el-progress>JavaScript
-					<el-progress :percentage="24.1" color="#f1e05a"></el-progress>CSS
-					<el-progress :percentage="13.7"></el-progress>HTML
+					<el-progress :percentage="24.1" color="#f1e05a"></el-progress>CSS <el-progress :percentage="13.7"></el-progress>HTML
 					<el-progress :percentage="5.9" color="#f56c6c"></el-progress>
 				</el-card>
 			</el-col>
@@ -87,7 +86,7 @@
 								<div
 									class="todo-item"
 									:class="{
-										'todo-item-del': scope.row.status
+										'todo-item-del': scope.row.status,
 									}"
 								>
 									{{ scope.row.title }}
@@ -124,71 +123,71 @@ const role: string = name === 'admin' ? '超级管理员' : '普通用户';
 const options = {
 	type: 'bar',
 	title: {
-		text: '最近一周各品类销售图'
+		text: '最近一周各品类销售图',
 	},
 	xRorate: 25,
 	labels: ['周一', '周二', '周三', '周四', '周五'],
 	datasets: [
 		{
 			label: '家电',
-			data: [234, 278, 270, 190, 230]
+			data: [234, 278, 270, 190, 230],
 		},
 		{
 			label: '百货',
-			data: [164, 178, 190, 135, 160]
+			data: [164, 178, 190, 135, 160],
 		},
 		{
 			label: '食品',
-			data: [144, 198, 150, 235, 120]
-		}
-	]
+			data: [144, 198, 150, 235, 120],
+		},
+	],
 };
 const options2 = {
 	type: 'line',
 	title: {
-		text: '最近几个月各品类销售趋势图'
+		text: '最近几个月各品类销售趋势图',
 	},
 	labels: ['6月', '7月', '8月', '9月', '10月'],
 	datasets: [
 		{
 			label: '家电',
-			data: [234, 278, 270, 190, 230]
+			data: [234, 278, 270, 190, 230],
 		},
 		{
 			label: '百货',
-			data: [164, 178, 150, 135, 160]
+			data: [164, 178, 150, 135, 160],
 		},
 		{
 			label: '食品',
-			data: [74, 118, 200, 235, 90]
-		}
-	]
+			data: [74, 118, 200, 235, 90],
+		},
+	],
 };
 const todoList = reactive([
 	{
 		title: '今天要修复100个bug',
-		status: false
+		status: false,
 	},
 	{
 		title: '今天要修复100个bug',
-		status: false
+		status: false,
 	},
 	{
 		title: '今天要写100行代码加几个bug吧',
-		status: false
+		status: false,
 	},
 	{
 		title: '今天要修复100个bug',
-		status: false
+		status: false,
 	},
 	{
 		title: '今天要修复100个bug',
-		status: true
+		status: true,
 	},
 	{
 		title: '今天要写100行代码加几个bug吧',
-		status: true
-	}
+		status: true,
+	},
 ]);
 </script>
 
