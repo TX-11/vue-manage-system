@@ -71,7 +71,7 @@
 					<template #header>
 						<div class="clearfix">
 							<span>待办事项</span>
-							<el-button style="float: right; padding: 3px 0" text>添加</el-button>
+							<el-button style="float: right; padding: 3px 0" text @click="addTableList">添加</el-button>
 						</div>
 					</template>
 
@@ -109,17 +109,19 @@
 				</el-card>
 			</el-col>
 		</el-row>
+		<diaLog v-if="showDiaLog" :visible="showDiaLog"></diaLog>
 	</div>
 </template>
 
 <script setup lang="ts" name="dashboard">
 import Schart from 'vue-schart';
-import { reactive } from 'vue';
+import { reactive, ref } from 'vue';
 import imgurl from '../assets/img/img.jpg';
+import diaLog from '../components/diaLog.vue';
 
 const name = localStorage.getItem('ms_username');
 const role: string = name === 'admin' ? '超级管理员' : '普通用户';
-
+const showDiaLog = ref(false);
 const options = {
 	type: 'bar',
 	title: {
@@ -165,11 +167,7 @@ const options2 = {
 };
 const todoList = reactive([
 	{
-		title: '今天要修复100个bug',
-		status: false,
-	},
-	{
-		title: '今天要修复100个bug',
+		title: 'title1',
 		status: false,
 	},
 	{
@@ -189,6 +187,10 @@ const todoList = reactive([
 		status: true,
 	},
 ]);
+const addTableList = () => {
+	showDiaLog.value = true;
+	// todoList.unshift({ title: '新增1', status: false });
+};
 </script>
 
 <style scoped>
